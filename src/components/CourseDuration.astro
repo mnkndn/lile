@@ -1,0 +1,64 @@
+---
+/* Course Duration Timeline — Screen 5
+   Teal bg, timeline left, image right */
+
+const phases = [
+  {
+    title: 'Before Course Commences',
+    items: [
+      'Personalized course selection assistance',
+      'Detailed day-by-day curriculum preview',
+    ],
+  },
+  {
+    title: 'During Course Period',
+    items: [
+      'Daily Updates of the Student Progress through Video/Photo',
+      'Engaging, activity-based learning',
+    ],
+  },
+  {
+    title: 'After Course Completion',
+    items: [
+      'Complete journey with LiLe video',
+      'Official course certification',
+    ],
+  },
+];
+---
+
+<section id="course-duration" class="section-screen bg-teal-gradient">
+  <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 items-center w-full max-w-7xl mx-auto px-[5vw]">
+
+    <!-- Timeline Column -->
+    <div class="flex flex-col gap-8">
+      {phases.map((phase) => (
+        <div class="flex flex-col gap-3">
+          <!-- Phase Title -->
+          <h3 class="font-heading text-sub text-brand-white">
+            {phase.title}
+          </h3>
+
+          <!-- Bullet Points -->
+          <ul class="list-disc list-inside text-brand-white text-base md:text-lg flex flex-col gap-2 pl-2">
+            {phase.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Image Column -->
+    <div class="hidden md:flex items-center justify-center">
+      <div class="w-72 lg:w-80 aspect-[3/4] overflow-hidden rounded-lg">
+        <!-- Placeholder: replace with actual student image -->
+        <img
+          src="/course_duration.jpeg"
+          alt="Student learning"
+          class="w-full h-full object-cover bg-brand-teal-dark"
+        />
+      </div>
+    </div>
+  </div>
+</section>

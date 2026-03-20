@@ -1,0 +1,100 @@
+---
+/* Course Details Table — Screen 4
+   Light bg, full-width table with teal header */
+
+const courses = [
+  {
+    name: 'Spoken English',
+    ageGroup: '7 - 12 Years',
+    days: 'Monday - Friday',
+    morning: '11 AM - 12 PM',
+    evening: '6 PM - 7 PM',
+    fees: '599/-',
+  },
+  {
+    name: 'Phonics',
+    ageGroup: '4 - 7 Years',
+    days: 'Tuesday, Thursday',
+    morning: '10 AM - 11 AM',
+    evening: '5 PM - 6 PM',
+    fees: '399/-',
+  },
+  {
+    name: 'Art and Craft',
+    ageGroup: '6 - 12 Years',
+    days: 'Monday, Wednesday, Friday',
+    morning: '11 AM - 12 PM',
+    evening: '6 PM - 7 PM',
+    fees: '599/- (KIT: 600/-)',
+  },
+  {
+    name: 'Home Economics',
+    ageGroup: '6 - 16 Years',
+    days: 'Tuesday, Thursday',
+    morning: '11 AM - 12 PM',
+    evening: '6 PM - 7 PM',
+    fees: '399/-',
+  },
+  {
+    name: 'Yoga and Fitness',
+    ageGroup: 'All Age Group',
+    days: 'Monday - Friday',
+    morning: '7 AM - 8 AM',
+    evening: '5 PM - 6 PM',
+    fees: '599/-',
+  },
+  {
+    name: 'Maths Basic',
+    ageGroup: '6 - 12 Years',
+    days: 'Monday, Tuesday, Thursday',
+    morning: '10 AM - 11 AM',
+    evening: '5 PM - 6 PM',
+    fees: '499/-',
+  },
+  {
+    name: 'STEM',
+    ageGroup: '8 - 14 Years',
+    days: 'Wednesday, Friday',
+    morning: '10 AM - 11 AM',
+    evening: '5 PM - 6 PM',
+    fees: '599/-',
+  },
+];
+
+const headers = ['Class', 'Recommended Age Group', 'Days', 'Morning Batch', 'Evening Batch', 'Fees (per month)'];
+---
+
+<section id="course-details" class="section-screen !overflow-visible bg-brand-light">
+  <div class="w-full max-w-7xl mx-auto px-4 md:px-[5vw] py-10">
+
+    <div class="overflow-x-auto bg-brand-white rounded-lg shadow-lg">
+      <table class="w-full text-left border-collapse min-w-[640px]">
+        <thead>
+          <tr style="background: linear-gradient(to right, #0097b2, #00b0cc);">
+            {headers.map((h, i) => (
+              <th class:list={[
+                'text-brand-white font-heading font-bold text-sm md:text-base uppercase tracking-wide px-4 py-5 text-center',
+                i === 0 && 'rounded-tl-lg',
+                i === headers.length - 1 && 'rounded-tr-lg',
+              ]}>
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {courses.map((c, i) => (
+            <tr class={`border-b border-gray-100 ${i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-light'}`}>
+              <td class="px-4 py-5 font-bold text-brand-black text-center text-sm md:text-base">{c.name}</td>
+              <td class="px-4 py-5 text-center text-sm md:text-base">{c.ageGroup}</td>
+              <td class="px-4 py-5 text-center text-sm md:text-base">{c.days}</td>
+              <td class="px-4 py-5 text-center text-sm md:text-base">{c.morning}</td>
+              <td class="px-4 py-5 text-center text-sm md:text-base">{c.evening}</td>
+              <td class="px-4 py-5 text-center text-sm md:text-base">{c.fees}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

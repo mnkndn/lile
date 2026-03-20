@@ -1,0 +1,51 @@
+---
+/* Navbar — sticky on scroll with soft shadow */
+---
+
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-brand-light transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-8 md:px-[5vw] py-4">
+    <div class="flex justify-between items-center">
+      <a href="#home" class="font-logo text-3xl md:text-4xl font-bold tracking-tight text-brand-navy">
+        Li<span class="text-brand-accent">Le</span>
+      </a>
+      <a id="contact-btn" href="#contact" class="text-[0.65rem] md:text-xs px-4 md:px-6 py-1.5 md:py-2 bg-teal-gradient text-white rounded-lg font-bold tracking-wide hover:opacity-90 transition-opacity duration-300 opacity-0 pointer-events-none">
+        CONTACT US
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const contactBtn = document.getElementById('contact-btn');
+  const footer = document.getElementById('contact');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar?.classList.add('shadow-md');
+    } else {
+      navbar?.classList.remove('shadow-md');
+    }
+  });
+
+  if (footer && contactBtn) {
+    contactBtn.addEventListener('click', () => {
+      contactBtn.classList.add('opacity-0', 'pointer-events-none');
+      contactBtn.classList.remove('opacity-100', 'pointer-events-auto');
+    });
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          contactBtn.classList.add('opacity-0', 'pointer-events-none');
+          contactBtn.classList.remove('opacity-100', 'pointer-events-auto');
+        } else {
+          contactBtn.classList.remove('opacity-0', 'pointer-events-none');
+          contactBtn.classList.add('opacity-100', 'pointer-events-auto');
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(footer);
+  }
+</script>

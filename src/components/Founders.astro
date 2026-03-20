@@ -1,0 +1,52 @@
+---
+/* Founders Section — Screen 6
+   Teal bg, two founder cards with circular photos */
+
+const founders = [
+  {
+    name: 'Initha Ezhilan',
+    role: 'Chief Executing Officer',
+    image: '/initha.jpeg',
+    bio: 'Miss Initha, co-founder of Little Leaders Academy, is an engineering graduate and accomplished educator with an international teaching diploma. A consistent high achiever, she integrates IT technology with education to create innovative learning experiences. After a successful IT career, she transitioned into education with a deeper purpose. Her vision is to make learning creative, engaging, affordable, and effective while nurturing confident, future-ready young learners.',
+  },
+  {
+    name: 'Sowbarnica',
+    role: 'Managing Director',
+    image: '/sowbarnica.jpeg',
+    bio: 'Miss Sowbarnica R, co-founder of Little Leaders Academy, is a dedicated educator with a strong foundation in International Business and a postgraduate diploma in Teaching. She blends global business knowledge with a passion for nurturing young minds. Transitioning from a technology background into education, she is driven by a vision to create engaging, student-centered learning. Her approach emphasizes creativity, confidence, and practical understanding, inspiring students to become future-ready learners.',
+  },
+];
+---
+
+<section id="founders" class="  section-screen bg-teal-gradient">
+  <div class="w-full max-w-6xl mx-auto px-[5vw] text-center">
+
+    <h2 class="font-heading text-section text-brand-white mb-14">
+      Meet our founders
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
+      {founders.map((f) => (
+        <div class="flex flex-col items-center">
+          <!-- Circular Photo Placeholder -->
+          <div class="w-48 h-48 mb-6">
+            <img
+              src={f.image}
+              alt={`Photo of ${f.name}`}
+              class:list={['img-circle w-full h-full bg-brand-teal-dark', f.name === 'Sowbarnica' ? 'object-fill' : 'object-cover']}
+            />
+          </div>
+
+          <h3 class="font-body text-xl font-bold uppercase tracking-wider text-brand-white">
+            {f.name}
+          </h3>
+          <p class="font-body text-brand-white/80 mb-4">{f.role}</p>
+
+          <p class="font-body text-brand-white/90 text-sm leading-relaxed italic max-w-md">
+            {f.bio}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
