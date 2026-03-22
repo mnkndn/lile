@@ -23,7 +23,7 @@
 @layer components {
   /* Reusable section wrapper */
   .section-screen {
-    @apply w-screen flex items-center justify-center relative overflow-hidden py-16 md:py-24;
+    @apply w-screen flex items-center justify-center relative overflow-hidden py-10 md:py-24;
   }
 
   /* Primary CTA button */
@@ -51,8 +51,8 @@
   /* Tag / pill used in Classes section */
   .class-tag {
     @apply text-brand-white font-body font-bold
-           uppercase tracking-wider text-sm md:text-xs md:text-sm
-           px-5 py-4 md:py-3 text-center rounded-lg;
+           uppercase tracking-wider text-xs md:text-xs md:text-sm
+           px-4 py-3 md:py-3 text-center rounded-lg;
   }
 
   /* Curved image mask — left variant */
