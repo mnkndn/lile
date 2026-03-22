@@ -23,14 +23,14 @@ export default {
 
       /* Typography */
       fontFamily: {
-        heading: ['"Comic Relief"', 'system-ui', 'sans-serif'],
-        body:    ['"Comic Relief"', 'system-ui', 'sans-serif'],
-        logo:    ['"Comic Relief"', 'system-ui', 'sans-serif'],
+        heading: ['"Roboto"', 'system-ui', 'sans-serif'],
+        body:    ['"Roboto"', 'system-ui', 'sans-serif'],
+        logo:    ['"Roboto"', 'system-ui', 'sans-serif'],
       },
 
       fontSize: {
-        'hero':    ['6.5rem',  { lineHeight: '1.05', fontWeight: '700' }],
-        'section': ['3.5rem',   { lineHeight: '1.15', fontWeight: '700' }],
+        'hero':    ['6.5rem',  { lineHeight: '1.05' }],
+        'section': ['3.5rem',   { lineHeight: '1.15' }],
         'sub':     ['1.75rem', { lineHeight: '1.3', fontWeight: '700' }],
       },
 
