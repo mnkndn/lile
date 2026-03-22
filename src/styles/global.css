@@ -34,6 +34,14 @@
     background: linear-gradient(to top right, #0097b2, #00b0cc);
   }
 
+  /* Outlined variant of primary button */
+  .btn-outline {
+    @apply inline-block font-body font-bold
+           uppercase tracking-widest text-sm px-10 py-4 rounded-lg
+           border-2 border-brand-teal text-brand-teal
+           hover:bg-brand-teal hover:text-brand-white transition-colors duration-300;
+  }
+
   .btn-hero {
     @apply inline-block bg-brand-black text-brand-white font-body font-bold
            uppercase tracking-widest text-sm px-10 py-4 rounded-lg
