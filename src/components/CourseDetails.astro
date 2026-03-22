@@ -65,9 +65,16 @@ const headers = ['Class', 'Recommended Age Group', 'Days', 'Morning Batch', 'Eve
 ---
 
 <section id="course-details" class="section-screen !overflow-visible bg-brand-light">
-  <div class="w-full max-w-7xl mx-auto px-4 md:px-[5vw] py-10">
+  <div class="w-full max-w-7xl mx-auto px-4 md:px-[5vw]">
 
-    <div class="overflow-x-auto bg-brand-white rounded-lg shadow-lg">
+    <h2 class="font-heading font-bold text-3xl md:text-section text-brand-navy mb-8 md:mb-14 text-center">
+      Class Details
+    </h2>
+
+    <div class="relative">
+      <!-- Scroll fade hint (mobile only) -->
+      <div id="table-fade" class="pointer-events-none absolute right-0 top-0 bottom-0 w-8 z-20 md:hidden rounded-r-lg" style="background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);"></div>
+      <div class="overflow-x-auto bg-brand-white rounded-lg shadow-lg" id="table-scroll">
       <table class="w-full text-left border-collapse min-w-[640px]">
         <thead>
           <tr style="background: #0497b2;">
@@ -95,6 +102,22 @@ const headers = ['Class', 'Recommended Age Group', 'Days', 'Morning Batch', 'Eve
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  const scrollEl = document.getElementById('table-scroll');
+  const fadeEl = document.getElementById('table-fade');
+  if (scrollEl && fadeEl) {
+    scrollEl.addEventListener('scroll', () => {
+      const maxScroll = scrollEl.scrollWidth - scrollEl.clientWidth;
+      if (scrollEl.scrollLeft >= maxScroll - 5) {
+        fadeEl.style.opacity = '0';
+      } else {
+        fadeEl.style.opacity = '1';
+      }
+    });
+  }
+</script>
