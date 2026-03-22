@@ -10,14 +10,14 @@ export default {
       /* Colors */
       colors: {
         brand: {
-          teal:       '#0097b2',   /* primary — from design mockup */
-          'teal-dark':'#007a91',   /* darker teal for alternating / hover */
-          'teal-bg':  '#00aecb',   /* lighter teal for backgrounds */
+          teal:       '#0497b2',   /* primary */
+          'teal-dark':'#0497b2',   /* same as primary — no gradient */
+          'teal-bg':  '#0497b2',   /* same as primary — no gradient */
           navy:       '#0f2d3d',   /* hero heading */
           light:      '#eef4f8',   /* light section bg */
           black:      '#111111',   /* buttons / dark text */
           white:      '#ffffff',
-          accent:     '#00c4d6',   /* "Le" highlight color */
+          accent:     '#0497b2',   /* "Le" highlight color */
         },
       },
 

@@ -31,7 +31,7 @@
     @apply inline-block text-brand-white font-body font-bold
            uppercase tracking-widest text-sm px-10 py-4 rounded-lg
            hover:opacity-90 transition-opacity duration-300;
-    background: linear-gradient(to top right, #0097b2, #00b0cc);
+    background: #0497b2;
   }
 
   /* Outlined variant of primary button */
@@ -65,14 +65,14 @@
     clip-path: ellipse(85% 90% at 70% 50%);
   }
 
-  /* Subtle left-to-right teal gradient for teal sections */
+  /* Flat teal for teal sections */
   .bg-teal-gradient {
-    background: linear-gradient(to top right, #0097b2, #00b0cc);
+    background: #0497b2;
   }
 
-  /* Darker teal gradient for alternating pills */
+  /* Same flat teal for alternating pills */
   .bg-teal-gradient-dark {
-    background: linear-gradient(to right, #007a91, #008da6);
+    background: #0497b2;
   }
 
   /* Circle image (founders) */
