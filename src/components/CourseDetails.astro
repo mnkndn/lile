@@ -74,9 +74,9 @@ const headers = ['Class', 'Recommended Age Group', 'Days', 'Morning Batch', 'Eve
             {headers.map((h, i) => (
               <th class:list={[
                 'text-brand-white font-heading font-bold text-sm md:text-base uppercase tracking-wide px-4 py-5 text-center',
-                i === 0 && 'rounded-tl-lg',
+                i === 0 && 'sticky left-0 z-10 rounded-tl-lg',
                 i === headers.length - 1 && 'rounded-tr-lg',
-              ]}>
+              ]} style={i === 0 ? 'background: #0497b2;' : ''}>
                 {h}
               </th>
             ))}
@@ -85,7 +85,7 @@ const headers = ['Class', 'Recommended Age Group', 'Days', 'Morning Batch', 'Eve
         <tbody>
           {courses.map((c, i) => (
             <tr class={`border-b border-gray-100 ${i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-light'}`}>
-              <td class="px-4 py-5 font-bold text-brand-black text-center text-sm md:text-base">{c.name}</td>
+              <td class={`sticky left-0 z-10 px-4 py-5 font-bold text-brand-black text-center text-sm md:text-base ${i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-light'}`}>{c.name}</td>
               <td class="px-4 py-5 text-center text-sm md:text-base">{c.ageGroup}</td>
               <td class="px-4 py-5 text-center text-sm md:text-base">{c.days}</td>
               <td class="px-4 py-5 text-center text-sm md:text-base">{c.morning}</td>
