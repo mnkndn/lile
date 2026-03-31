@@ -5,63 +5,49 @@
 const courses = [
   {
     name: 'Spoken English',
-    ageGroup: '7 - 12 Years',
-    days: 'Monday - Friday',
-    morning: '11 AM - 12 PM',
-    evening: '6 PM - 7 PM',
-    fees: '599/-',
+    days: 'Monday, Wednesday, Friday',
+    morning: '10:30 AM - 11:30 AM',
+    evening: '06:30 PM - 07:30 PM',
   },
   {
     name: 'Phonics',
-    ageGroup: '4 - 7 Years',
     days: 'Tuesday, Thursday',
-    morning: '10 AM - 11 AM',
-    evening: '5 PM - 6 PM',
-    fees: '399/-',
+    morning: '10:30 AM - 11:30 AM',
+    evening: '06:30 PM - 07:30 PM',
   },
   {
-    name: 'Art and Craft',
-    ageGroup: '6 - 12 Years',
+    name: 'Art & Craft',
     days: 'Monday, Wednesday, Friday',
-    morning: '11 AM - 12 PM',
-    evening: '6 PM - 7 PM',
-    fees: '599/- (KIT: 600/-)',
+    morning: '09:30 AM - 10:30 AM',
+    evening: '05:30 PM - 06:30 PM',
   },
   {
     name: 'Home Economics',
-    ageGroup: '6 - 16 Years',
     days: 'Tuesday, Thursday',
-    morning: '11 AM - 12 PM',
-    evening: '6 PM - 7 PM',
-    fees: '399/-',
+    morning: '09:30 AM - 10:30 AM',
+    evening: '05:30 PM - 06:30 PM',
   },
   {
-    name: 'Yoga and Fitness',
-    ageGroup: 'All Age Group',
+    name: 'Physical Activity & Fitness',
     days: 'Monday - Friday',
-    morning: '7 AM - 8 AM',
-    evening: '5 PM - 6 PM',
-    fees: '599/-',
+    morning: '11:30 AM - 12:30 PM',
+    evening: '07:30 PM - 08:30 PM',
   },
   {
     name: 'Maths Basic',
-    ageGroup: '6 - 12 Years',
     days: 'Monday, Tuesday, Thursday',
-    morning: '10 AM - 11 AM',
-    evening: '5 PM - 6 PM',
-    fees: '499/-',
+    morning: '09:30 AM - 10:30 AM',
+    evening: '05:30 PM - 06:30 PM',
   },
   {
-    name: 'STEM',
-    ageGroup: '8 - 14 Years',
-    days: 'Wednesday, Friday',
-    morning: '10 AM - 11 AM',
+    name: 'Yoga For All',
+    days: 'Monday - Friday',
+    morning: '7 AM - 8 AM',
     evening: '5 PM - 6 PM',
-    fees: '599/-',
   },
 ];
 
-const headers = ['Class', 'Recommended Age Group', 'Days', 'Morning Batch', 'Evening Batch', 'Fees (per month)'];
+const headers = ['Class', 'Days', 'Morning Batch', 'Evening Batch'];
 ---
 
 <section id="course-details" class="section-screen !overflow-visible bg-brand-light">
@@ -93,11 +79,9 @@ const headers = ['Class', 'Recommended Age Group', 'Days', 'Morning Batch', 'Eve
           {courses.map((c, i) => (
             <tr class={`border-b border-gray-100 ${i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-light'}`}>
               <td class={`sticky left-0 z-10 px-4 py-5 font-bold text-brand-black text-center text-sm md:text-base ${i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-light'}`}>{c.name}</td>
-              <td class="px-4 py-5 text-center text-sm md:text-base">{c.ageGroup}</td>
               <td class="px-4 py-5 text-center text-sm md:text-base">{c.days}</td>
               <td class="px-4 py-5 text-center text-sm md:text-base">{c.morning}</td>
               <td class="px-4 py-5 text-center text-sm md:text-base">{c.evening}</td>
-              <td class="px-4 py-5 text-center text-sm md:text-base">{c.fees}</td>
             </tr>
           ))}
         </tbody>
